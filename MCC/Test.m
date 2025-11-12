@@ -60,3 +60,14 @@ K_corr = acker(Ad,Bd,poles_souhaites);
 
 
 S_corr = inv(Cd*inv(eye(2)-Ad+Bd*K_corr)*Bd)
+
+
+%% Terme integrale
+poles_souhaites = [0.9412-0.0741i 0.9412+0.0741i 0.9];
+A_t = [Ad zeros(size(Ad,1),1);Cd ones(size(Cd,1),1)];
+B_t = [Bd;Dd];
+
+K_t = acker(A_t,B_t,poles_souhaites);
+
+K_int = K_t(1:2);
+H_barre = K_t(3);
