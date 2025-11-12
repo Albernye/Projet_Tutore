@@ -40,5 +40,23 @@ num = cell2mat(TF_U_theta.Numerator);
 
 A = [0 1;-denom(3) -denom(2)];
 B = [num(2) num(3)]';
-C = eye(2);
-D = zeros(2,1);
+C = [1 0];
+D = 0;
+
+
+%% Echantillonnage
+Te = 1/100;
+Sc = ss(A,B,C,D);
+Sd = c2d(Sc,Te,'zoh');
+
+Ad = Sd.A;
+Bd = Sd.B;
+Cd = Sd.C;
+Dd = Sd.D;
+
+poles_souhaites = [0.9412-0.0741i 0.9412+0.0741i];
+
+K_corr = acker(Ad,Bd,poles_souhaites);
+
+
+S_corr = inv(Cd*inv(eye(2)-Ad+Bd*K_corr)*Bd)
