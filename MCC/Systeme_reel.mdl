@@ -1,9 +1,9 @@
 # MathWorks OPC Text Package
 Model {
-  Version  25.1
-  Description "Simulink model saved in R2025a"
+  Version  25.2
+  Description "Simulink model saved in R2025b"
 }
-__MWOPC_PACKAGE_BEGIN__ R2025a
+__MWOPC_PACKAGE_BEGIN__ R2025b
 __MWOPC_PART_BEGIN__ /[Content_Types].xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
@@ -41,10 +41,10 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <cp:category>model</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2025-11-07T14:34:31Z</dcterms:created>
   <dc:creator>carol</dc:creator>
-  <cp:lastModifiedBy>carol</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-12T16:15:33Z</dcterms:modified>
-  <cp:revision>1.6</cp:revision>
-  <cp:version>R2025a</cp:version>
+  <cp:lastModifiedBy>alber</cp:lastModifiedBy>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-12T16:18:12Z</dcterms:modified>
+  <cp:revision>2.0</cp:revision>
+  <cp:version>R2025b</cp:version>
 </cp:coreProperties>
 
 __MWOPC_PART_BEGIN__ /metadata/mwcoreProperties.xml
@@ -52,7 +52,7 @@ __MWOPC_PART_BEGIN__ /metadata/mwcoreProperties.xml
 <mwcoreProperties xmlns="http://schemas.mathworks.com/package/2012/coreProperties">
   <contentType>application/vnd.mathworks.simulink.model</contentType>
   <contentTypeFriendlyName>Simulink Model</contentTypeFriendlyName>
-  <matlabRelease>R2025a</matlabRelease>
+  <matlabRelease>R2025b</matlabRelease>
 </mwcoreProperties>
 
 __MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesExtension.xml
@@ -63,13 +63,13 @@ __MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesExtension.xml
 
 __MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesReleaseInfo.xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Version information for MathWorks R2025a Release -->
+<!-- Version information for MathWorks R2025b Release -->
 <MathWorks_version_info>
-  <version>25.1.0.2943329</version>
-  <release>R2025a</release>
-  <description></description>
-  <date>Apr 16 2025</date>
-  <checksum>423651790</checksum>
+  <version>25.2.0.3042426</version>
+  <release>R2025b</release>
+  <description>Update 1</description>
+  <date>Oct 03 2025</date>
+  <checksum>3600278938</checksum>
 </MathWorks_version_info>
 
 __MWOPC_PART_BEGIN__ /simulink/_rels/blockdiagram.xml.rels
@@ -109,7 +109,7 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:1.6&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:2.0&gt;</P>
     </ConfigManagerSettings>
     <SimulationSettings>
       <P Name="SimulationMode">normal</P>
@@ -1149,9 +1149,9 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleEditor.xml
 __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[-1, -7, 1537, 817]</P>
+  <P Name="Location">[-1, -7, 1280, 681]</P>
   <P Name="Open">on</P>
-  <P Name="ZoomFactor">60</P>
+  <P Name="ZoomFactor">80</P>
   <P Name="ReportName">simulink-default.rpt</P>
   <P Name="SIDHighWatermark">34</P>
   <Block BlockType="Constant" Name="Constant" SID="13">
@@ -1163,7 +1163,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <PortCounts in="1" out="1"/>
     <P Name="Position">[790, 272, 850, 308]</P>
     <P Name="ZOrder">106</P>
-    <P Name="LibraryVersion">7.11</P>
+    <P Name="LibraryVersion">8.0</P>
     <P Name="SourceBlock">simulink/Discrete/Discrete Derivative</P>
     <P Name="SourceType">Discrete Derivative</P>
     <InstanceData>
@@ -1191,10 +1191,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <PortCounts in="1" out="1"/>
     <P Name="Position">[460, 195, 590, 275]</P>
     <P Name="ZOrder">12</P>
-    <P Name="LibraryVersion">10.1</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">legoev3lib/Encoder</P>
     <P Name="SourceType">LEGO MINDSTORMS EV3 Encoder</P>
     <InstanceData>
+      <P Name="SFcnIsStateOwnerBlock">off</P>
       <P Name="MultithreadedSim">auto</P>
       <P Name="portNumber">D</P>
       <P Name="opMode">Reset by external signal</P>
@@ -1216,19 +1217,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Gain">S_corr</P>
     <P Name="Multiplication">Matrix(K*u)</P>
   </Block>
-  <Block BlockType="Gain" Name="Gain2" SID="34">
-    <P Name="Position">[500, 455, 540, 505]</P>
-    <P Name="ZOrder">126</P>
-    <P Name="BlockMirror">on</P>
-    <P Name="NameLocation">top</P>
-    <P Name="Gain">K_corr</P>
-    <P Name="Multiplication">Matrix(K*u)</P>
-  </Block>
   <Block BlockType="Reference" Name="Motor" SID="2">
     <PortCounts in="1"/>
     <P Name="Position">[310, 195, 440, 275]</P>
     <P Name="ZOrder">11</P>
-    <P Name="LibraryVersion">10.1</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">legoev3lib/Motor</P>
     <P Name="SourceType">LEGO MINDSTORMS EV3 Motor</P>
     <InstanceData>
@@ -1399,7 +1392,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
   <Object PropName="BdWindowsInfo" ObjectID="1" ClassName="Simulink.BDWindowsInfo">
     <Object PropName="WindowsInfo" ObjectID="2" ClassName="Simulink.WindowInfo">
       <P Name="IsActive" Class="logical">1</P>
-      <P Name="Location" Class="double">[-1.0, -7.0, 1538.0, 824.0]</P>
+      <P Name="Location" Class="double">[-1.0, -7.0, 1281.0, 688.0]</P>
       <Object PropName="ModelBrowserInfo" ObjectID="3" ClassName="Simulink.ModelBrowserInfo">
         <P Name="Visible" Class="logical">1</P>
         <P Name="DockPosition" Class="char">Left</P>
@@ -1416,12 +1409,12 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
         <P Name="IsTabbed" Class="logical">1</P>
         <P Name="ViewObjType" Class="char">SimulinkTopLevel</P>
         <P Name="LoadSaveID" Class="char">0</P>
-        <P Name="Extents" Class="double">[1419.0, 477.0]</P>
-        <P Name="ZoomFactor" Class="double">0.6</P>
-        <P Name="Offset" Class="double">[-272.23800565833278, 8.841231100458856]</P>
-        <P Name="SceneRectInView" Class="double">[-272.23800565833278, 8.841231100458856, 1892.0, 636.0]</P>
+        <P Name="Extents" Class="double">[1786.0, 694.0]</P>
+        <P Name="ZoomFactor" Class="double">0.8</P>
+        <P Name="Offset" Class="double">[-295.48036708931727, -57.713505580026265]</P>
+        <P Name="SceneRectInView" Class="double">[-295.48036708931727, -57.713505580026265, 1488.333333333333, 578.33333333333326]</P>
       </Object>
-      <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*3">
+      <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
         <Object ObjectID="6">
           <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
           <P Name="ID" Class="char">Property Inspector</P>
@@ -1430,8 +1423,8 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="UserData" Class="char"/>
           <P Name="Floating" Class="logical">0</P>
           <P Name="DockPosition" Class="char">Right</P>
-          <P Name="Width" Class="int32">512</P>
-          <P Name="Height" Class="int32">384</P>
+          <P Name="Width" Class="int32">426</P>
+          <P Name="Height" Class="int32">320</P>
           <P Name="Minimized" Class="char">On</P>
         </Object>
         <Object ObjectID="7">
@@ -1443,24 +1436,12 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
 </P>
           <P Name="Floating" Class="logical">0</P>
           <P Name="DockPosition" Class="char">Left</P>
-          <P Name="Width" Class="int32">512</P>
-          <P Name="Height" Class="int32">384</P>
-          <P Name="Minimized" Class="char">Unset</P>
-        </Object>
-        <Object ObjectID="8">
-          <P Name="Type" Class="char">LibraryBrowser2 LibraryBrowserStudioComponent</P>
-          <P Name="ID" Class="char">Systeme_reel</P>
-          <P Name="Visible" Class="logical">1</P>
-          <P Name="CreateCallback" Class="char"/>
-          <P Name="UserData" Class="char"/>
-          <P Name="Floating" Class="logical">0</P>
-          <P Name="DockPosition" Class="char">Left</P>
-          <P Name="Width" Class="int32">303</P>
-          <P Name="Height" Class="int32">622</P>
+          <P Name="Width" Class="int32">426</P>
+          <P Name="Height" Class="int32">320</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
       </Array>
-      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAF/AAADLPwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD8AAAAlwAAAywAAADqAP////oAAAACAgAAAAP7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB5AP////sAAABqAEwAaQBiAHIAYQByAHkAQgByAG8AdwBzAGUAcgAyACAATABpAGIAcgBhAHIAeQBCAHIAbwB3AHMAZQByAFMAdAB1AGQAaQBvAEMAbwBtAHAAbwBuAGUAbgB0AC8AcABvAHIAdABhAGcAZQEAAAAA/////wAAAAAAAAAA+wAAAHQATABpAGIAcgBhAHIAeQBCAHIAbwB3AHMAZQByADIAIABMAGkAYgByAGEAcgB5AEIAcgBvAHcAcwBlAHIAUwB0AHUAZABpAG8AQwBvAG0AcABvAG4AZQBuAHQALwBTAHkAcwB0AGUAbQBlAF8AcgBlAGUAbAEAAAAA/////wAAAOoA////+wAAAGAAUwBpAG0AdQBsAGkAbgBrADoARQBkAGkAdABvAHIAOgBSAGUAZgBlAHIAZQBuAGMAZQBkAEYAaQBsAGUAcwAvAFIAZQBmAGUAcgBlAG4AYwBlAGQAIABGAGkAbABlAHMAAAAAAP////8AAACnAP///wAAAAEAAAAAAAAAAPwCAAAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZQBjAHQAbwByAAAAAAD/////AAACFgD///8AAAADAAAFuAAAAQP8AQAAAAH7/////wEAAAGlAAAFuAAAAxYA////AAAFuAAAAiQAAAABAAAAAgAAAAEAAAAC/AAAAAMAAAAAAAAAAQAAADYAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEwAZQBmAHQDAAAAAP////8AAAAAAAAAAAAAAAEAAAABAAAAOABjAG8AbABsAGEAcABzAGkAYgBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIAUgBpAGcAaAB0AwAAAAD/////AAAAAAAAAAAAAAADAAAAAQAAADoAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEIAbwB0AHQAbwBtAAAAAAD/////AAAAAAAAAAA=</P>
+      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAF/AAADLPwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD8AAAAlwAAAywAAAAAAP////oAAAABAgAAAAP7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP////sAAABqAEwAaQBiAHIAYQByAHkAQgByAG8AdwBzAGUAcgAyACAATABpAGIAcgBhAHIAeQBCAHIAbwB3AHMAZQByAFMAdAB1AGQAaQBvAEMAbwBtAHAAbwBuAGUAbgB0AC8AcABvAHIAdABhAGcAZQEAAAAA/////wAAAAAAAAAA+wAAAHQATABpAGIAcgBhAHIAeQBCAHIAbwB3AHMAZQByADIAIABMAGkAYgByAGEAcgB5AEIAcgBvAHcAcwBlAHIAUwB0AHUAZABpAG8AQwBvAG0AcABvAG4AZQBuAHQALwBTAHkAcwB0AGUAbQBlAF8AcgBlAGUAbAEAAAAA/////wAAAAAAAAAA+wAAAGAAUwBpAG0AdQBsAGkAbgBrADoARQBkAGkAdABvAHIAOgBSAGUAZgBlAHIAZQBuAGMAZQBkAEYAaQBsAGUAcwAvAFIAZQBmAGUAcgBlAG4AYwBlAGQAIABGAGkAbABlAHMAAAAAAP////8AAADHAP///wAAAAEAAAAAAAAAAPwCAAAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZQBjAHQAbwByAAAAAAD/////AAACgAD///8AAAADAAAFuAAAAQP8AQAAAAH7/////wAAAAAA/////wAAA7MA////AAAHMgAAAwQAAAABAAAAAgAAAAEAAAAC/AAAAAMAAAAAAAAAAQAAADYAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEwAZQBmAHQDAAAAAP////8AAAAAAAAAAAAAAAEAAAABAAAAOABjAG8AbABsAGEAcABzAGkAYgBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIAUgBpAGcAaAB0AwAAAAD/////AAAAAAAAAAAAAAADAAAAAQAAADoAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEIAbwB0AHQAbwBtAAAAAAD/////AAAAAAAAAAA=</P>
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">dfb79cc3-4aa4-41b6-9607-6dc5d9b020f6</P>
     </Object>
