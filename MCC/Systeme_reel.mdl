@@ -1153,7 +1153,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <P Name="Open">on</P>
   <P Name="ZoomFactor">80</P>
   <P Name="ReportName">simulink-default.rpt</P>
-  <P Name="SIDHighWatermark">34</P>
+  <P Name="SIDHighWatermark">16</P>
   <Block BlockType="Constant" Name="Constant" SID="13">
     <P Name="Position">[565, 135, 595, 165]</P>
     <P Name="ZOrder">105</P>
@@ -1211,7 +1211,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Multiplication">Matrix(K*u)</P>
   </Block>
   <Block BlockType="Gain" Name="Gain1" SID="8">
-    <P Name="Position">[-90, 210, -50, 260]</P>
+    <P Name="Position">[40, 210, 80, 260]</P>
     <P Name="ZOrder">102</P>
     <P Name="NameLocation">top</P>
     <P Name="Gain">S_corr</P>
