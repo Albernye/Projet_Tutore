@@ -71,3 +71,18 @@ K_t = acker(A_t,B_t,poles_souhaites);
 
 K_int = K_t(1:2);
 H_barre = K_t(3);
+
+
+%% Observateur
+n_C = rank(obsv(Ad,Cd)); % n_C = 2 donc observable (p = 2)
+I_p = [eye(2) [0;0]];
+
+
+% Calcul du gain d'observateur L
+poles_observateur = [0.1 0.2]; % Pôles souhaités pour l'observateur
+Lo = acker(Ad', Cd', poles_observateur)'; % Gain d'observateur
+
+Aobs = Ad-Lo*Cd;
+Bobs = [Bd Lo];
+Cobs = eye(2);
+Dobs = zeros(2);
