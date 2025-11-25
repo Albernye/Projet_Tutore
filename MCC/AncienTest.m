@@ -63,7 +63,7 @@ S_corr = inv(Cd*inv(eye(2)-Ad+Bd*K_corr)*Bd)
 
 
 %% Terme integrale
-poles_souhaites = [0.9412-0.0741i 0.9412+0.0741i 0.9];
+poles_souhaites = [0.9 0.9412-0.0741i 0.9412+0.0741i];
 A_t = [Ad zeros(size(Ad,1),1);Cd ones(size(Cd,1),1)];
 B_t = [Bd;Dd];
 
@@ -79,10 +79,17 @@ I_p = [eye(2) [0;0]];
 
 
 % Calcul du gain d'observateur L
-poles_observateur = [0.1 0.2]; % Pôles souhaités pour l'observateur
+poles_observateur = [0.5 0.55]; % Pôles souhaités pour l'observateur
 Lo = acker(Ad', Cd', poles_observateur)'; % Gain d'observateur
 
 Aobs = Ad-Lo*Cd;
 Bobs = [Bd Lo];
 Cobs = eye(2);
 Dobs = zeros(2);
+
+% %% Calcul valeur propre
+% 
+% MATRICE = [Ad-Bd*K_int Bd*H_barre;
+%        -Cd+Dd*K_int 1-Dd*H_barre];
+% 
+% eig(MATRICE)
