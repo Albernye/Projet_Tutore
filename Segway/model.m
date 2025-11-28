@@ -75,3 +75,6 @@ Dd = s2.D;
 % unité
 
 % Commandabilité : On a bien rank(ctrb(Ad,Bd)) = 4
+
+%% Retour d'état
+
