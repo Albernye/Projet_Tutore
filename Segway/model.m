@@ -55,11 +55,23 @@ B_1 = [0;0;
 
 s1 = ss(A_1, B_1, eye(4), zeros(4,1));
 
-%s1.StateName = {'theta', 'psi', 'theta_dot', 'psi_dot'};
-%s1.InputName = {'U'};
+s1.StateName = {'theta', 'psi', 'theta_dot', 'psi_dot'};
+s1.InputName = {'U'};
 
+% Etats d'équilibre du système : psi = [0; -90; 90]
+% psi = 0 est un état d'équilibre instable 
 
 %% For discrete control and simulation
 Ts = 0.004;                     % Control system sample time
 Psi0 = deg2rad(8);             % Initial value to disturb the system
 
+s2 = c2d(s1,Ts,'zoh');  % On vérifie bien que s2.A == expm(A_1*Ts)
+Ad = s2.A;
+Bd = s2.B;
+Cd = s2.C;
+Dd = s2.D;
+
+% Limite de stabilité dans le plan complexe en temps discret est le cerlce
+% unité
+
+% Commandabilité : On a bien rank(ctrb(Ad,Bd)) = 4

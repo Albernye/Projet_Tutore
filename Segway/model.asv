@@ -55,8 +55,11 @@ B_1 = [0;0;
 
 s1 = ss(A_1, B_1, eye(4), zeros(4,1));
 
-%s1.StateName = {'theta', 'psi', 'theta_dot', 'psi_dot'};
-%s1.InputName = {'U'};
+s1.StateName = {'theta', 'psi', 'theta_dot', 'psi_dot'};
+s1.InputName = {'U'};
+
+% Etats d'équilibre du système : psi = [0; -90; 90]
+
 
 
 %% For discrete control and simulation
