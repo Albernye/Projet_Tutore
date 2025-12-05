@@ -1,10 +1,10 @@
 %% Physical constants
 g = 9.81;                       % gravity acceleration [m/sec^2]
 %% Physical parameters
-m = 0.1;						% wheel weight [kg]
+m = 0.032;						% wheel weight [kg]
 R = 0.027;						% wheel radius [m]
 Jw = m * R^2 / 2;				% wheel inertia moment [kgm^2]
-M = 2.5;                        % body weight [kg]
+M = 0.837;                      % body weight [kg]
 W = 0.105;						% body width [m]
 D = 0.1;						% body depth [m]
 h = 0.21;       				% body height [m]
