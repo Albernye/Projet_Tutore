@@ -87,9 +87,9 @@ Bobs = [Bd Lo];
 Cobs = eye(2);
 Dobs = zeros(2);
 
-% %% Calcul valeur propre
-% 
-% MATRICE = [Ad-Bd*K_int Bd*H_barre;
-%        -Cd+Dd*K_int 1-Dd*H_barre];
-% 
-% eig(MATRICE)
+%% Calcul valeur propre
+
+MATRICE = [Ad-Bd*K_int Bd*H_barre;
+       -Cd+Dd*K_int 1-Dd*H_barre];
+   
+eig(MATRICE)
