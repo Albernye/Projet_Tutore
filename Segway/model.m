@@ -1,3 +1,7 @@
+clc;
+close;
+clear;
+
 %% Physical constants
 g = 9.81;                       % gravity acceleration [m/sec^2]
 %% Physical parameters
@@ -42,7 +46,7 @@ G = [0 0;
     0 -M*g*L];
 
 A_1 = [zeros(2) eye(2);
-    inv(E)*G inv(E)*F];
+    -inv(E)*G -inv(E)*F];
 
 B_1 = [0;0;
     inv(E)*H];
@@ -78,3 +82,18 @@ Dd = s2.D;
 
 %% Retour d'état
 
+poles_souhaites = [0.3314 0.9739 0.7 0.9];
+
+K_corr = acker(Ad,Bd,poles_souhaites);
+
+S_corr = inv([1 0 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
+
+%% Terme integrale
+% poles_souhaites = [0.9412-0.0741i 0.9412+0.0741i 0.9];
+% A_t = [Ad zeros(size(Ad,1),1);Cd ones(size(Cd,1),1)];
+% B_t = [Bd;Dd];
+% 
+% K_t = acker(A_t,B_t,poles_souhaites);
+% 
+% K_int = K_t(1:2);
+% H_barre = K_t(3);
