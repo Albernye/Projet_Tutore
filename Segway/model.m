@@ -86,7 +86,7 @@ poles_souhaites = [0.6 0.9739 0.98 0.89];
 
 K_corr = acker(Ad,Bd,poles_souhaites);
 
-S_corr = inv([0 1 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
+S_corr = inv([1 0 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
 
 %% Terme integrale
 % poles_souhaites = [0.9412-0.0741i 0.9412+0.0741i 0.9];
