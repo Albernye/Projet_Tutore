@@ -51,11 +51,10 @@ A_1 = [zeros(2) eye(2);
 B_1 = [0;0;
     inv(E)*H];
 
-% C_1 = [1 0 0 0;
-%        0 0 0 0;
-%        0 0 0 0;
-%        0 0 0 1];  On ne peut qu'avoir la position des roues et la vitesse
-%        angulaire du robot
+C_1 = [1 0 0 0;
+       0 0 0 0;
+       0 0 0 0;
+       0 0 0 1];  %On ne peut qu'avoir la position des roues et la vitesseangulaire du robot
 
 s1 = ss(A_1, B_1, eye(4), zeros(4,1));
 
@@ -97,3 +96,5 @@ S_corr = inv([1 0 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
 % 
 % K_int = K_t(1:2);
 % H_barre = K_t(3);
+
+gamma = 0.999;
