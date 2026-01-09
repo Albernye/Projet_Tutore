@@ -25,7 +25,7 @@ Kt = 0.317;						% DC motor torque constant [Nm/A]
 K_PWM = 8.087;                  % Volts to PWM value coefficient [1/V]
 
 
-%% Constantes definition
+%% Constants definition
 alpha =  Kt / Rm;
 beta =  Kt * Kb / Rm + fm;
 E_11 = (2 * m + M) * R^2 + 2 * Jw + 2 * Jm;
@@ -54,7 +54,9 @@ B_1 = [0;0;
 C_1 = [1 0 0 0;
        0 0 0 0;
        0 0 0 0;
-       0 0 0 1];  %On ne peut qu'avoir la position des roues et la vitesseangulaire du robot
+       0 0 0 1];  %On ne peut qu'avoir la position des roues et
+% la vitesse angulaire du robot dans le calcul de notre gain de
+% préfiltrage
 
 s1 = ss(A_1, B_1, eye(4), zeros(4,1));
 
@@ -65,8 +67,8 @@ s1.InputName = {'U'};
 % psi = 0 est un état d'équilibre instable 
 
 %% For discrete control and simulation
-Ts = 0.004;                     % Control system sample time
-Psi0 = deg2rad(8);             % Initial value to disturb the system
+Ts = 0.004;  % seconds                   % Control system sample time
+Psi0 = deg2rad(8);   % degrees          % Initial value to disturb the system
 
 s2 = c2d(s1,Ts,'zoh');  % On vérifie bien que s2.A == expm(A_1*Ts)
 Ad = s2.A;
@@ -74,7 +76,7 @@ Bd = s2.B;
 Cd = s2.C;
 Dd = s2.D;
 
-% Limite de stabilité dans le plan complexe en temps discret est le cerlce
+% Limite de stabilité dans le plan complexe en temps discret est le cercle
 % unité
 
 % Commandabilité : On a bien rank(ctrb(Ad,Bd)) = 4
@@ -97,4 +99,8 @@ S_corr = inv([1 0 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
 % K_int = K_t(1:2);
 % H_barre = K_t(3);
 
+
+%% Filtrage de psi_dot
+
 gamma = 0.999;
+biais = tf([1-gamma 0],[1 -gamma],Ts);
