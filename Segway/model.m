@@ -68,7 +68,7 @@ s1.InputName = {'U'};
 
 %% For discrete control and simulation
 Ts = 0.004;  % seconds                   % Control system sample time
-Psi0 = deg2rad(8);   % degrees          % Initial value to disturb the system
+Psi0 = deg2rad(8);   % radian          % Initial value to disturb the system
 
 s2 = c2d(s1,Ts,'zoh');  % On vérifie bien que s2.A == expm(A_1*Ts)
 Ad = s2.A;
@@ -83,7 +83,7 @@ Dd = s2.D;
 
 %% Retour d'état
 
-poles_souhaites = [0.6 0.9739 0.98 0.89];
+poles_souhaites = [0.4 0.9739 0.98 0.89];
 
 K_corr = acker(Ad,Bd,poles_souhaites);
 
