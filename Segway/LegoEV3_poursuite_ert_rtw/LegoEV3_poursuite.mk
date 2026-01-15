@@ -2,7 +2,7 @@
 ## Makefile generated for component 'LegoEV3_poursuite'. 
 ## 
 ## Makefile     : LegoEV3_poursuite.mk
-## Generated on : Thu Jan 15 09:11:03 2026
+## Generated on : Thu Jan 15 11:10:47 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/LegoEV3_poursuite
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = LegoEV3_poursuite.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2025b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2025b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/carol/Documents/GitHub/Projet_Tutore/Segway
+START_DIR                 = C:/Users/alber/Documents/GitHub/Projet_Tutore/Segway
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -168,7 +168,7 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__
+DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -D_RTT_LCD_=1
 DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
 DEFINES_OPTS = -DTID01EQ=1
@@ -181,7 +181,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/LegoEV3_poursuite_ert_rtw/LegoEV3_poursuite.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+SRCS = $(START_DIR)/LegoEV3_poursuite_ert_rtw/LegoEV3_poursuite.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_ultrasonic_sensor.c
 
 MAIN_SRC = $(START_DIR)/LegoEV3_poursuite_ert_rtw/ert_main.c
 
@@ -191,7 +191,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = LegoEV3_poursuite.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_encoder.o driver_ev3_gyro_sensor.o driver_ev3_motor.o
+OBJS = LegoEV3_poursuite.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_encoder.o driver_ev3_gyro_sensor.o driver_ev3_motor.o driver_ev3_ultrasonic_sensor.o
 
 MAIN_OBJ = ert_main.o
 
@@ -432,6 +432,10 @@ driver_ev3_gyro_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/
 
 
 driver_ev3_motor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+driver_ev3_ultrasonic_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_ultrasonic_sensor.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
