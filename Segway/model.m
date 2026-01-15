@@ -108,4 +108,15 @@ gamma = 0.999;
 biais = tf([1-gamma 0],[1 -gamma],Ts);
 
 
-%% Asservissement en poursuite
+%% Terme intégral
+poles_souhaites = [0.5 0.9739 0.98 0.89 0.45];
+
+Cd = [1 0 0 0]; Dd = 0;
+A_t = [Ad zeros(size(Ad,1),1);-Cd ones(size(Cd,1),1)];
+B_t = [Bd;-Dd];
+
+K_t = acker(A_t,B_t,poles_souhaites);
+
+K_int = K_t(1:4);
+H_barre = K_t(5);
+
