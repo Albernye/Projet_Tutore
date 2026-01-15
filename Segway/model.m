@@ -104,3 +104,6 @@ S_corr = inv([1 0 0 0]*inv(eye(4)-Ad+Bd*K_corr)*Bd);
 
 gamma = 0.999;
 biais = tf([1-gamma 0],[1 -gamma],Ts);
+
+
+%% Asservissement en poursuite
