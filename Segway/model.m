@@ -111,9 +111,9 @@ biais = tf([1-gamma 0],[1 -gamma],Ts);
 %% Terme intégral
 poles_souhaites = [0.5 0.9739 0.98 0.89 0.45];
 
-Cd = [1 0 0 0]; Dd = 0;
-A_t = [Ad zeros(size(Ad,1),1);-Cd ones(size(Cd,1),1)];
-B_t = [Bd;-Dd];
+Cint = [1 0 0 0]; Dint = 0;
+A_t = [Ad zeros(size(Ad,1),1);-Cint ones(size(Cint,1),1)];
+B_t = [Bd;-Dint];
 
 K_t = acker(A_t,B_t,poles_souhaites);
 
