@@ -83,7 +83,7 @@ Dd = s2.D;
 
 %% Retour d'état
 
-poles_souhaites = [0.5 0.9739 0.98 0.89];
+poles_souhaites = [0.6 0.9739 0.98 0.89];
 
 K_corr = acker(Ad,Bd,poles_souhaites);
 
@@ -118,5 +118,5 @@ B_t = [Bd;-Dint];
 K_t = acker(A_t,B_t,poles_souhaites);
 
 K_int = K_t(1:4);
-H_barre = K_t(5);
-
+mH_barre = K_t(5);
+H_barre = -mH_barre;
