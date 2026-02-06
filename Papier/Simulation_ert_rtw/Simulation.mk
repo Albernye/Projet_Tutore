@@ -1,9 +1,9 @@
 ###########################################################################
-## Makefile generated for component 'EV3_rotation'. 
+## Makefile generated for component 'Simulation'. 
 ## 
-## Makefile     : EV3_rotation.mk
-## Generated on : Fri Feb 06 15:43:30 2026
-## Final product: $(RELATIVE_PATH_TO_ANCHOR)/EV3_rotation
+## Makefile     : Simulation.mk
+## Generated on : Fri Feb 06 15:29:11 2026
+## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Simulation
 ## Product type : executable
 ## 
 ###########################################################################
@@ -16,8 +16,8 @@
 # PRODUCT_NAME            Name of the system to build
 # MAKEFILE                Name of this makefile
 
-PRODUCT_NAME              = EV3_rotation
-MAKEFILE                  = EV3_rotation.mk
+PRODUCT_NAME              = Simulation
+MAKEFILE                  = Simulation.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2025b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2025b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
@@ -152,7 +152,7 @@ SHAREDLIB_LDFLAGS    =
 ## OUTPUT INFO
 ###########################################################################
 
-PRODUCT = $(RELATIVE_PATH_TO_ANCHOR)/EV3_rotation
+PRODUCT = $(RELATIVE_PATH_TO_ANCHOR)/Simulation
 PRODUCT_TYPE = "executable"
 BUILD_TYPE = "Top-Level Standalone Executable"
 
@@ -160,7 +160,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -IC:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/include -I$(START_DIR)/EV3_rotation_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I"$(EV3_LMSTYPES_DIR)/.." -I"$(EV3_LMS2012_DIR)/.." -I"$(EV3_BYTECODES_DIR)/.." -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc -IC:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src
+INCLUDES_BUILDINFO = -I$(START_DIR) -IC:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/include -I$(START_DIR)/Simulation_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I"$(EV3_LMSTYPES_DIR)/.." -I"$(EV3_LMS2012_DIR)/.." -I"$(EV3_BYTECODES_DIR)/.." -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc -IC:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -168,12 +168,12 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__
+DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -D_RTT_LCD_=1
 DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
-DEFINES_OPTS = -DTID01EQ=1
+DEFINES_OPTS = -DTID01EQ=0
 DEFINES_SKIPFORSIL = -D__linux__ -DARM_PROJECT -D_USE_TARGET_UDP_ -D_RUNONTARGETHARDWARE_BUILD_ -DSTACK_SIZE=64 -DRT
-DEFINES_STANDARD = -DMODEL=EV3_rotation -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
+DEFINES_STANDARD = -DMODEL=Simulation -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
 
@@ -181,9 +181,9 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/EV3_rotation_ert_rtw/EV3_rotation.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+SRCS = $(START_DIR)/Simulation_ert_rtw/Simulation.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_color_sensor.c
 
-MAIN_SRC = $(START_DIR)/EV3_rotation_ert_rtw/ert_main.c
+MAIN_SRC = $(START_DIR)/Simulation_ert_rtw/ert_main.c
 
 ALL_SRCS = $(SRCS) $(MAIN_SRC)
 
@@ -191,7 +191,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = EV3_rotation.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_encoder.o driver_ev3_gyro_sensor.o driver_ev3_motor.o
+OBJS = Simulation.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_color_sensor.o
 
 MAIN_OBJ = ert_main.o
 
@@ -363,11 +363,11 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : $(START_DIR)/EV3_rotation_ert_rtw/%.c
+%.o : $(START_DIR)/Simulation_ert_rtw/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.o : $(START_DIR)/EV3_rotation_ert_rtw/%.cpp
+%.o : $(START_DIR)/Simulation_ert_rtw/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -395,11 +395,11 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-ert_main.o : $(START_DIR)/EV3_rotation_ert_rtw/ert_main.c
+ert_main.o : $(START_DIR)/Simulation_ert_rtw/ert_main.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-EV3_rotation.o : $(START_DIR)/EV3_rotation_ert_rtw/EV3_rotation.c
+Simulation.o : $(START_DIR)/Simulation_ert_rtw/Simulation.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
@@ -423,15 +423,7 @@ driver_pixy2_vision_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/tool
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-driver_ev3_encoder.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-driver_ev3_gyro_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-driver_ev3_motor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+driver_ev3_color_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_color_sensor.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
