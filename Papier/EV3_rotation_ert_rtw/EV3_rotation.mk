@@ -2,7 +2,7 @@
 ## Makefile generated for component 'EV3_rotation'. 
 ## 
 ## Makefile     : EV3_rotation.mk
-## Generated on : Fri Feb 06 15:43:30 2026
+## Generated on : Thu Feb 12 14:25:07 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/EV3_rotation
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = EV3_rotation.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2025b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2025b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/carol/Documents/GitHub/Projet_Tutore/Papier
+START_DIR                 = C:/Users/alber/Documents/GitHub/Projet_Tutore/Papier
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -168,12 +168,12 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__
+DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -D_RTT_LCD_=1
 DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
-DEFINES_OPTS = -DTID01EQ=1
+DEFINES_OPTS = -DTID01EQ=0
 DEFINES_SKIPFORSIL = -D__linux__ -DARM_PROJECT -D_USE_TARGET_UDP_ -D_RUNONTARGETHARDWARE_BUILD_ -DSTACK_SIZE=64 -DRT
-DEFINES_STANDARD = -DMODEL=EV3_rotation -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
+DEFINES_STANDARD = -DMODEL=EV3_rotation -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
 
@@ -181,7 +181,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/EV3_rotation_ert_rtw/EV3_rotation.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+SRCS = $(START_DIR)/EV3_rotation_ert_rtw/EV3_rotation.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_button.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_lcd.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/MW_legoev3init.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_pixy2_vision_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_encoder.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_gyro_sensor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_ultrasonic_sensor.c
 
 MAIN_SRC = $(START_DIR)/EV3_rotation_ert_rtw/ert_main.c
 
@@ -191,7 +191,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = EV3_rotation.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_encoder.o driver_ev3_gyro_sensor.o driver_ev3_motor.o
+OBJS = EV3_rotation.o linuxinitialize.o driver_ev3_button.o driver_ev3_lcd.o MW_legoev3init.o driver_pixy2_vision_sensor.o driver_ev3_encoder.o driver_ev3_gyro_sensor.o driver_ev3_motor.o driver_ev3_ultrasonic_sensor.o
 
 MAIN_OBJ = ert_main.o
 
@@ -432,6 +432,10 @@ driver_ev3_gyro_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/
 
 
 driver_ev3_motor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_motor.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+driver_ev3_ultrasonic_sensor.o : C:/ProgramData/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/ev3/src/driver_ev3_ultrasonic_sensor.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
